@@ -2,7 +2,12 @@
 
 Contact Keeper app based on Brad Traversy's course React Front To Back 2019
 
+## Get Started
+- copy `.env.example` to `.env`, and set the values as needed
+
 ## Notes
+- Brad uses `config` package allows us to create a `config/default.json` file.  Anything we put here will be available in all our app. https://github.com/lorenwest/node-config -- but then Brad commits this to GitHub :/
+- I'm using `dotenv` to put the MongoDB user/password into `.env` file and not publish to GH.  Not sure why Brad shows his followers to publish things like passwords and secret keys.
 
 ## Questions
 
@@ -19,6 +24,7 @@ Contact Keeper app based on Brad Traversy's course React Front To Back 2019
 - install dependencies and devDependencies
   - `npm install express bcryptjs jsonwebtoken config express-validator mongoose`
   - `npm install -D nodemon concurrently`
+  - ** but we should probably replace `config` with `dotenv` instead.
 - Initial `server.js` and test access to it with curl or Postman
 - Setup our backend routes and test them with `curl` or Postman - eg:
   - GET localhost:5000
@@ -28,3 +34,5 @@ curl localhost:5000
 curl localhost:5000/api/contacts
 curl localhost:5000/api/contacts/1 -X PUT
 ```
+- uninstall `config` and install `dotenv`.  set the DB user/pass in `.env` and test DB connection to MongoDB.
+- 
