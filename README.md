@@ -45,3 +45,5 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Use User model to check MongoDB if user exists, or create new instance of User model, hash the password, and save to DB.
 - Authenticate route
 - Auth middleware -- extracts the user info from the token, and add the userid to req object
+- `Contact` model.  
+  - Get contacts & Add contact (GET & POST)
