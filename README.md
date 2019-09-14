@@ -43,4 +43,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Add `User` mongoose model.
 - Add validation for name, email, password using `express-validator`.  I'm using v6 so I had to make some changes from Brad's using v5.  
 - Use User model to check MongoDB if user exists, or create new instance of User model, hash the password, and save to DB.
-- 
+- Authenticate route
