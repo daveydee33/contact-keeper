@@ -70,8 +70,8 @@ router.post(
         }
       );
     } catch (err) {
-      console.log('Error when finding or creating the user');
-      console.log(err);
+      console.error('Error when finding or creating the user');
+      console.error(err);
       return res
         .status(500)
         .send('There was a server error - check the server logs');
