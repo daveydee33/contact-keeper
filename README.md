@@ -6,6 +6,10 @@ Contact Keeper app based on Brad Traversy's course React Front To Back 2019
 - copy `.env.example` to `.env`, and set the values as needed
 - If problem connecting to MongoDB -- probably need to whitelist IP again -- https://cloud.mongodb.com/v2/5d74a6c8d5ec13d54791e858#security/network/whitelist
 
+## TODO
+- Move all references of `process.env` to something like `config/index.js` or something else.
+- Why does the JWT token always say "Invalid Signature" when checked at https://jwt.io ?  Brad's does the same
+
 ## Notes
 - Brad uses `config` package allows us to create a `config/default.json` file.  Anything we put here will be available in all our app. https://github.com/lorenwest/node-config -- but then Brad commits this to GitHub :/
 - I'm using `dotenv` to put the MongoDB user/password into `.env` file and not publish to GH.  Not sure why Brad shows his followers to publish things like passwords and secret keys.
@@ -39,3 +43,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Add `User` mongoose model.
 - Add validation for name, email, password using `express-validator`.  I'm using v6 so I had to make some changes from Brad's using v5.  
 - Use User model to check MongoDB if user exists, or create new instance of User model, hash the password, and save to DB.
+- 

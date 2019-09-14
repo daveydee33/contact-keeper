@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+const jwtSecret = process.env.JWT_SECRET;
 
 // @route     POST api/users
 // @desc      Register a user
@@ -53,10 +54,23 @@ router.post(
 
       // then save the user to the db
       await user.save();
+      console.log('New user created and saved to db:\n', user);
 
-      // And then do someting...
-      res.send('User saved'); // TEMP
+      // then return a JWT token containing the UserID
+      const payload = { user: { id: user.id } };
+      jwt.sign(
+        payload,
+        jwtSecret,
+        {
+          expiresIn: '7 days'
+        },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (err) {
+      console.log('Error when finding or creating the user');
       console.log(err);
       return res
         .status(500)
@@ -64,19 +78,5 @@ router.post(
     }
   }
 );
-
-// router.post(
-//   '/',
-
-//   (req, res) => {
-//     console.log('called it');
-//     const errors = validationResult(req);
-//     if (!errors.isEmpty()) {
-//       return res.status(400).json({ errors: errors.array() });
-//     }
-//     res.send('all good');
-//     // res.send(req.body);
-//   }
-// );
 
 module.exports = router;
