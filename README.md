@@ -47,3 +47,5 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Auth middleware -- extracts the user info from the token, and add the userid to req object
 - `Contact` model.  
   - Get contacts & Add contact (GET & POST)
+- Adding the Update & Delete routes.  (PUT/DELETE) - but I discovered some errors that will need to be fixed.
+  - the attempt to return the 404 will never get called.  Server error instead.
