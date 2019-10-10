@@ -49,3 +49,18 @@ curl localhost:5000/api/contacts/1 -X PUT
   - Get contacts & Add contact (GET & POST)
 - Adding the Update & Delete routes.  (PUT/DELETE) - but I discovered some errors that will need to be fixed.
   - the attempt to return the 404 will never get called.  Server error instead.
+
+- Setting up the client part
+  - `npx create-react-app client`
+  - add 3 scripts to the __server__ 
+    - `server/package.json`:
+```json
+"client": "npm start --prefix client",
+"clientinstall": "npm install --prefix client",
+"dev": "concurrently \"npm run server\" \"npm run client\"",
+```
+  - add `proxy` to the __client__ 
+    - `client/package.json`:
+```json
+"proxy": "http://localhost:5000"
+```
