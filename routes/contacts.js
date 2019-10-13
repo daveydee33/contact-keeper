@@ -5,6 +5,7 @@ const { check, validationResult } = require('express-validator');
 
 const User = require('../models/User');
 const Contact = require('../models/Contact');
+const mongoose = require('mongoose');
 
 // @route     GET api/contacts
 // @desc      Get all user's contacts
@@ -126,6 +127,11 @@ router.put('/:id', auth, async (req, res) => {
 // @access    Private
 router.delete('/:id', auth, async (req, res) => {
   try {
+    // if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    //   console.error('not a valid id format.');
+    //   return res.json({ msg: 'This ID is not a valid ObjectID format' });
+    // }
+
     const contact = await Contact.findById(req.params.id);
 
     // TODO: Fix this - because it's never being called in the PUT or DELETE -- it goes straight to the catch/500
@@ -139,7 +145,9 @@ router.delete('/:id', auth, async (req, res) => {
 
     res.json({ msg: 'Contact removed' });
   } catch (err) {
-    console.error(err.message);
+    console.error('Error deleting by ID.');
+    console.error('The ID may not be mongoose ObjectID format');
+    console.error(err);
     res.status(500).send('Server error');
   }
 });
