@@ -1,9 +1,8 @@
 import React, { useContext, Fragment } from 'react';
 import ContactContext from '../../context/contact/contactContext';
 import ContactItem from './ContactItem';
-import PropTypes from 'prop-types';
 
-const Contacts = props => {
+const Contacts = () => {
   const contactContext = useContext(ContactContext);
 
   const { contacts } = contactContext;
@@ -16,7 +15,5 @@ const Contacts = props => {
     </Fragment>
   );
 };
-
-Contacts.propTypes = {};
 
 export default Contacts;

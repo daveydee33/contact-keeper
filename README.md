@@ -89,3 +89,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - navigation and placeholder pages: Home + About
 - Contact Context
 - `Contacts` and `ContactItem` components with dummy data - but styled in UI with buttons
+- create Contact Form, and addContact reducer/function to add new user on front end only
