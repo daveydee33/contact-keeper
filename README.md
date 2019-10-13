@@ -85,6 +85,6 @@ curl localhost:5000/api/contacts/1 -X PUT
   - `cd client`
     - `npm install axios react-router-dom uuid react-transition-group`
   - copy in the new `App.css` file from Brad. (this one has some different styles than the one used in GitHub Finder)
-  - add FontAwesome 
-  - navigation and placeholder pages: Home + About
-  - 
+- add FontAwesome 
+- navigation and placeholder pages: Home + About
+- Contact Context
