@@ -22,21 +22,38 @@ const ContactState = props => {
         name: 'AAA',
         email: 'aaa@aaa.com',
         phone: '111-111-1111',
-        type: 'personal'
+        type: 'professional'
       },
       {
         id: 2,
         name: 'BBB',
         email: 'bbb@bbb.com',
         phone: '222-222-2222',
-        type: 'personal'
+        type: 'other'
       },
       {
         id: 3,
         name: 'CCC',
         email: 'ccc@ccc.com',
         phone: '333-333-3333',
-        type: 'personal'
+        type: 'professional'
+      },
+      {
+        id: 4,
+        name: 'CCC',
+        phone: '333-333-3333',
+        type: 'professional'
+      },
+      {
+        id: 5,
+        name: 'CCC',
+        email: 'ccc@ccc.com',
+        type: 'professional'
+      },
+      {
+        id: 6,
+        name: 'CCC',
+        type: 'professional'
       }
     ]
   };
