@@ -8,8 +8,8 @@ import {
   ADD_CONTACT,
   DELETE_CONTACT,
   SET_CURRENT,
-  CLEAR_CURRENT
-  // UPDATE_CONTACT,
+  CLEAR_CURRENT,
+  UPDATE_CONTACT
   // FILTER_CONTACTS,
   // CLEAR_FILTER
 } from '../types';
@@ -29,7 +29,7 @@ const ContactState = props => {
         name: 'BBB',
         email: 'bbb@bbb.com',
         phone: '222-222-2222',
-        type: 'other'
+        type: 'personal'
       },
       {
         id: 3,
@@ -67,6 +67,11 @@ const ContactState = props => {
     dispatch({ type: ADD_CONTACT, payload: contact });
   };
 
+  // Update Contact
+  const updateContact = contact => {
+    dispatch({ type: UPDATE_CONTACT, payload: contact });
+  };
+
   // Delete Contact
   const deleteContact = id => {
     dispatch({ type: DELETE_CONTACT, payload: id });
@@ -82,7 +87,6 @@ const ContactState = props => {
     dispatch({ type: CLEAR_CURRENT });
   };
 
-  // Update Contact
   // Filter Contacts
   // Clear Filter
 
@@ -92,6 +96,7 @@ const ContactState = props => {
         contacts: state.contacts,
         current: state.current,
         addContact,
+        updateContact,
         deleteContact,
         setCurrent,
         clearCurrent
