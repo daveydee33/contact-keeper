@@ -94,4 +94,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - `setCurrent` and `clearCurrent` functionalities -- added to 'Edit' and 'Delete' buttons
 - Update contact record functionality
 - Filter contact records functionality
-- CSS Transitions for fade-in and fade-out of contacts records
+- CSS Transitions for fade-in and fade-out of contact records
