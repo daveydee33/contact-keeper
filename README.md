@@ -92,3 +92,5 @@ curl localhost:5000/api/contacts/1 -X PUT
 - create Contact Form, and addContact reducer/function to add new user on front end only
 - Delete contact functionality
 - `setCurrent` and `clearCurrent` functionalities -- added to 'Edit' and 'Delete' buttons
+- Update contact record functionality
+- Filter contact records functionality

@@ -3,9 +3,9 @@ import {
   DELETE_CONTACT,
   SET_CURRENT,
   CLEAR_CURRENT,
-  UPDATE_CONTACT
-  // FILTER_CONTACTS,
-  // CLEAR_FILTER
+  UPDATE_CONTACT,
+  FILTER_CONTACTS,
+  CLEAR_FILTER
 } from '../types';
 
 export default (state, action) => {
@@ -38,6 +38,29 @@ export default (state, action) => {
       return {
         ...state,
         current: null
+      };
+    case FILTER_CONTACTS:
+      return {
+        ...state,
+        filtered: state.contacts.filter(contact => {
+          const regex = new RegExp(`${action.payload}`, 'gi');
+
+          // bug - this is to handle if any of those fields are not set.
+          contact.name = contact.name || '';
+          contact.email = contact.email || '';
+          contact.phone = contact.phone || '';
+
+          return (
+            contact.name.match(regex) ||
+            contact.email.match(regex) ||
+            contact.phone.match(regex)
+          );
+        })
+      };
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        filtered: null
       };
     default:
       return state;
