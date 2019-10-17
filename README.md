@@ -95,3 +95,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Update contact record functionality
 - Filter contact records functionality
 - CSS Transitions for fade-in and fade-out of contact records
+- `AuthContext` and initial state
