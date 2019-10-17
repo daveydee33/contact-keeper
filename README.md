@@ -96,4 +96,6 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Filter contact records functionality
 - CSS Transitions for fade-in and fade-out of contact records
 - `AuthContext` and initial state
-- Login and Register components and links in Navbar
+- `Login` and `Register` components and links in Navbar
+- `Alerts` -- context and components.  Added and tested on Register component
+  
