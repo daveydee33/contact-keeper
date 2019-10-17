@@ -100,5 +100,7 @@ curl localhost:5000/api/contacts/1 -X PUT
 - `Alerts` -- context and components.  Added and tested on Register component
 - User Registration - with check/alert if user already exits
 - Authentication -- load user and set token.  Works with Register component only.  Can refresh page and token/user info still in state
-- Login - functionality, similar to register.
-- 
+- Login - functionality, similar to register.  Displays error on failed login or redirects and set user info in state on valid login
+- Navbar - dynamic links for authenticated or guest user.
+- Logout functionality and link in Nabar
+  
