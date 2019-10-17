@@ -14,7 +14,7 @@ import {
   CLEAR_ERRORS
 } from '../types';
 
-const ContactState = props => {
+const AuthState = props => {
   const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
