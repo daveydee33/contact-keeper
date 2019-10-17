@@ -1,9 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
 
 const Register = () => {
+  const authContext = useContext(AuthContext);
+  const { register, error, clearErrors } = authContext;
   const alertContext = useContext(AlertContext);
   const { setAlert } = alertContext;
+
+  useEffect(() => {
+    // should change this later, so we don't just pass the API error response message directly to UI.  We can use our own error codes or something.
+    if (error) {
+      setAlert(error, 'danger');
+      clearErrors();
+    }
+  }, [error]);
 
   const [user, setUser] = useState({
     name: '',
@@ -23,7 +34,7 @@ const Register = () => {
     } else if (password !== password2) {
       setAlert('Passwords must match', 'danger');
     } else {
-      console.log('Register submit...');
+      register({ name, email, password });
     }
   };
 
