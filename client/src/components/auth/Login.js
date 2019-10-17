@@ -1,6 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import AuthContext from '../../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
 
-const Login = () => {
+const Login = props => {
+  const authContext = useContext(AuthContext);
+  const { login, error, clearErrors, isAuthenticated } = authContext;
+  const alertContext = useContext(AlertContext);
+  const { setAlert } = alertContext;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push('/');
+    }
+
+    // should change this later, so we don't just pass the API error response message directly to UI.  We can use our own error codes or something.
+    if (error) {
+      setAlert(error, 'danger');
+      clearErrors();
+    }
+    // Disable lint warning "React Hook useEffect has missing dependencies: 'clearErrors' and 'setAlert'. Either include them or remove the dependency array  react-hooks/exhaustive-deps"
+    // eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
+
   const [user, setUser] = useState({
     email: '',
     password: ''
@@ -12,7 +33,11 @@ const Login = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log('Login...', e);
+    if (email === '' || password === '') {
+      setAlert('Please enter all fields', 'danger');
+    } else {
+      login({ email, password });
+    }
   };
 
   return (
