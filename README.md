@@ -99,4 +99,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - `Login` and `Register` components and links in Navbar
 - `Alerts` -- context and components.  Added and tested on Register component
 - User Registration - with check/alert if user already exits
-- 
+- Authentication -- load user and set token.  Works with Register component only.  Can refresh page and token/user info still in state
