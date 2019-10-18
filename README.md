@@ -104,3 +104,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Navbar - dynamic links for authenticated or guest user.
 - Logout functionality and link in Nabar
 - `PrivateRoute` component to redirect on pages that should require to be logged in
+- AddContact to now use our API backend and store to MongoDB instead of our temp hardcoded local data
