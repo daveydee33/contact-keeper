@@ -103,4 +103,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - Login - functionality, similar to register.  Displays error on failed login or redirects and set user info in state on valid login
 - Navbar - dynamic links for authenticated or guest user.
 - Logout functionality and link in Nabar
-  
+- `PrivateRoute` component to redirect on pages that should require to be logged in
