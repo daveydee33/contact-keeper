@@ -21,7 +21,7 @@ const AuthState = props => {
   const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
-    loading: false,
+    loading: true, // I had set this to false, but refresh page was redirecting to Login page
     user: null,
     error: null
   };
