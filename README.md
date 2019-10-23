@@ -106,3 +106,4 @@ curl localhost:5000/api/contacts/1 -X PUT
 - `PrivateRoute` component to redirect on pages that should require to be logged in
 - AddContact to now use our API backend and store to MongoDB instead of our temp hardcoded local data
 - Get Contacts, Loading Spinner, move the ContactFilter to other file, some fixes, and Clear Contacts
+- Fix DeleteContact now to work with MongoDB backend.  And some other UI fixes
