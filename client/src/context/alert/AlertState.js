@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import uuid from 'uuid/v4';
-import alertContext from './alertContext';
+import AlertContext from './alertContext';
 import alertReducer from './alertReducer';
 
 import { SET_ALERT, REMOVE_ALERT } from '../types';
@@ -25,14 +25,14 @@ const AlertState = props => {
   };
 
   return (
-    <alertContext.Provider
+    <AlertContext.Provider
       value={{
         alerts: state,
         setAlert
       }}
     >
       {props.children}
-    </alertContext.Provider>
+    </AlertContext.Provider>
   );
 };
 

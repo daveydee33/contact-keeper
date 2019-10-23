@@ -13,7 +13,7 @@ const Register = props => {
       props.history.push('/');
     }
 
-    // should change this later, so we don't just pass the API error response message directly to UI.  We can use our own error codes or something.
+    // #TODO: should change this later, so we don't just pass the API error response message directly to UI.  We can use our own error codes or something.
     if (error) {
       setAlert(error, 'danger');
       clearErrors();
@@ -73,7 +73,7 @@ const Register = props => {
         <div className="form-group">
           <label htmlFor="password2">Confirm Password</label>
           <input
-            type="text"
+            type="password"
             name="password2"
             value={password2}
             onChange={onChange}

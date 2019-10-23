@@ -13,7 +13,7 @@ const Login = props => {
       props.history.push('/');
     }
 
-    // should change this later, so we don't just pass the API error response message directly to UI.  We can use our own error codes or something.
+    // #TODO: should change this later, so we don't just pass the API error response message directly to UI.  We can use our own error codes or something.
     if (error) {
       setAlert(error, 'danger');
       clearErrors();
@@ -54,7 +54,7 @@ const Login = props => {
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             value={password}
             onChange={onChange}

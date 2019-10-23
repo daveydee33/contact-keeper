@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
 
-import authContext from './authContext';
+import AuthContext from './authContext';
 import authReducer from './authReducer';
 
 import setAuthToken from '../../utils/setAuthToken';
@@ -89,7 +89,7 @@ const AuthState = props => {
   };
 
   return (
-    <authContext.Provider
+    <AuthContext.Provider
       value={{
         token: state.token,
         isAuthenticated: state.isAuthenticated,
@@ -104,7 +104,7 @@ const AuthState = props => {
       }}
     >
       {props.children}
-    </authContext.Provider>
+    </AuthContext.Provider>
   );
 };
 

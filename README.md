@@ -107,3 +107,6 @@ curl localhost:5000/api/contacts/1 -X PUT
 - AddContact to now use our API backend and store to MongoDB instead of our temp hardcoded local data
 - Get Contacts, Loading Spinner, move the ContactFilter to other file, some fixes, and Clear Contacts
 - Fix DeleteContact now to work with MongoDB backend.  And some other UI fixes
+- fixed an issue that page refresh kept redirecting to Login page - was an error with the `loading: false` default state.
+- modify the Delete and Update contact options to work with the API/MongoDB now (instead of the hardcoded temp records we had)
+- lots of other fixes and things

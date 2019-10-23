@@ -9,6 +9,7 @@ connectDB();
 // Init Middleware
 app.use(express.json({ extended: false }));
 
+// This was just for testing.
 app.get('/', (req, res) => res.json({ msg: 'Welcome to ContactKeepr API' }));
 
 // Define Routes
