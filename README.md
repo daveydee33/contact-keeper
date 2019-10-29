@@ -113,7 +113,7 @@ curl localhost:5000/api/contacts/1 -X PUT
 - prep app for production deployment with Heroku
 server package.json
 ```
-    "heroku-postbuikd": "NPM_CONFIG_PRODUCTION=false npm install prefix=client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix=client && npm run build --prefix client"
 ```
 server.js
 ```javascript
