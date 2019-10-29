@@ -110,3 +110,20 @@ curl localhost:5000/api/contacts/1 -X PUT
 - fixed an issue that page refresh kept redirecting to Login page - was an error with the `loading: false` default state.
 - modify the Delete and Update contact options to work with the API/MongoDB now (instead of the hardcoded temp records we had)
 - lots of other fixes and things
+- prep app for production deployment with Heroku
+server package.json
+```
+    "heroku-postbuikd": "NPM_CONFIG_PRODUCTION=false npm install prefix=client && npm run build --prefix client"
+```
+server.js
+```javascript
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  );
+}
+```
